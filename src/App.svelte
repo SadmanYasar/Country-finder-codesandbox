@@ -1,7 +1,7 @@
 <script>
   import countries_services from "./services/countries";
-  import LoadingScreen from "./components/LoadingScreen";
-  import Card from "./components/Card";
+  import LoadingScreen from "./components/LoadingScreen.svelte";
+  import Card from "./components/Card.svelte";
 
   let countries = [];
   let filters = [];
