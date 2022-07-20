@@ -15,7 +15,7 @@ export default {
     format: "iife",
     name: "app",
     file: "public/bundle.js",
-    external: ["moment"]
+    external: ["axios"]
   },
   plugins: [
     svelte({
