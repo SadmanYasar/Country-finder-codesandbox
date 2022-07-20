@@ -1,5 +1,5 @@
 <script>
-  import Cat_Service from "../services/cat";
+  import Cat_Service from "../services/cat.js";
 </script>
 
 <style>

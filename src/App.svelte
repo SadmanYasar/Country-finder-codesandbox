@@ -1,5 +1,5 @@
 <script>
-  import countries_services from "./services/countries";
+  import countries_services from "./services/countries.js";
   import LoadingScreen from "./components/LoadingScreen.svelte";
   import Card from "./components/Card.svelte";
 
@@ -13,14 +13,17 @@
   };
 
   $: {
-    const match = new RegExp(searchVal.trim(), "i");
-    filters = countries.filter(c => match.test(c.name.official));
-
-    if (filters.length > 10) {
-      message = "";
-      filters = [];
-    } else {
-      message = `Found ${filters.length} results`;
+    try {
+      const match = new RegExp(searchVal.trim(), "i");
+      filters = countries.filter(c => match.test(c.name.official));
+      if (filters.length > 10) {
+        message = "";
+        filters = [];
+      } else {
+        message = `Found ${filters.length} results`;
+      }
+    } catch (error) {
+      //do nothing
     }
   }
 </script>
